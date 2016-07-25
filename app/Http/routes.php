@@ -14,7 +14,15 @@
 Route::group(['middleware' => 'web'], function ()
 {
     Route::get('/', 'HomeController@index');
-    Route::get('kapanlulus', 'LulusesController@index');
-    Route::get('kerjaapa', 'KerjasController@index');
-    Route::get('kapannikah', 'NikahsController@index');
+    Route::resource('kapanlulus', 'LulusesController');
+    Route::resource('kerjaapa', 'KerjasController');
+    Route::resource('kapannikah', 'NikahsController');
 });
+
+Route::auth();
+Route::group( ['middleware' => 'auth'], function ()
+{
+    Route::resource('admin', 'AdminController', ['only' => ['index', 'show']]);
+});
+
+Route::get('/home', 'HomeController@index');

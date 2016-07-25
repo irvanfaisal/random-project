@@ -20,12 +20,17 @@ a:hover {
     margin: 0 auto;
     width: 90%;
     text-align: center;
-    padding-top:10%;
-
+    padding-top:5%;
 }
+
+
 
 .fb_iframe_widget{
     vertical-align: top;
+}
+
+#admin{
+    margin-bottom:10%;
 }
 
 footer {
